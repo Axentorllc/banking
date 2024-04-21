@@ -358,7 +358,7 @@ def auto_reconcile_vouchers(
 @frappe.whitelist()
 def get_linked_payments(
 	bank_transaction_name: str,
-	document_types: str = None,
+	document_types: list = None,
 	from_date: str = None,
 	to_date: str = None,
 	filter_by_reference_date: str = None,
