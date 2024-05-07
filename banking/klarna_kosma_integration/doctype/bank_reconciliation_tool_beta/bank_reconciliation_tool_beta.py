@@ -358,7 +358,7 @@ def auto_reconcile_vouchers(
 @frappe.whitelist()
 def get_linked_payments(
 	bank_transaction_name: str,
-	document_types: str = None,
+	document_types=None,
 	from_date: str = None,
 	to_date: str = None,
 	filter_by_reference_date: str = None,
@@ -370,7 +370,7 @@ def get_linked_payments(
 	gl_account, company = frappe.db.get_value(
 		"Bank Account", transaction.bank_account, ["account", "company"]
 	)
-	document_types = json.loads(document_types)
+	# document_types = json.loads(document_types)
 	matching = check_matching(
 		gl_account,
 		company,
