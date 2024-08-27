@@ -470,6 +470,7 @@ def get_queries(
 	filter_by_reference_date,
 	from_reference_date,
 	to_reference_date,
+	common_filters=None,
 ):
 	# get queries to get matching vouchers
 	account_from_to = "paid_to" if transaction.deposit > 0.0 else "paid_from"
@@ -491,6 +492,7 @@ def get_queries(
 				filter_by_reference_date,
 				from_reference_date,
 				to_reference_date,
+				common_filters,
 			)
 			or []
 		)
